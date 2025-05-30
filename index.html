@@ -290,9 +290,7 @@ var clicker = function (e) {
 
   currentSign = currentSign === 'cross' ? 'circle' : 'cross';
 }
-document
-  .querySelectorAll('.grid.main *')
-  .forEach(box => box.addEventListener('click', clicker));
+
 
 
 function detectWin() {
@@ -357,6 +355,9 @@ function startGame() {
   document.querySelector('dialog').close();
   setTimeout(() => {
     document.body.classList.add('ready');
+    document
+      .querySelectorAll('.grid.main *')
+      .forEach(box => box.addEventListener('click', clicker));
   }, 300)
 }
  
